@@ -22,4 +22,9 @@ public class JdbcTeacherDao implements TeacherDao {
 
 	}
 
+	@Override
+	public List<Teacher> get() {
+		return teachers;
+	}
+
 }

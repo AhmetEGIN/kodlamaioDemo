@@ -1,8 +1,8 @@
 package kodlamaioDemo.dataAccess;
 
+import kodlamaioDemo.core.dataAccess.EntityRepository;
 import kodlamaioDemo.entities.Course;
 
-public interface CourseDao {
-	void add(Course course);
-	boolean getCourse(Course course);
+public interface CourseDao extends EntityRepository<Course> {
+
 }

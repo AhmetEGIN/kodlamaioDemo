@@ -22,13 +22,8 @@ public class JdbcCourseDao implements CourseDao {
 	}
 
 	@Override
-	public boolean getCourse(Course course) {
-		for(Course _course : courses) {
-			if (_course.getName().equals(course.getName())) {
-				return false;
-			}
-		}
-		return true;
+	public List<Course> get() {
+		return courses;
 	}
 
 }

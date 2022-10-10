@@ -16,20 +16,15 @@ public class JdbcCategoryDao implements CategoryDao {
 	}
 
 	@Override
-	public void add(Category category) {
-		categories.add(category);
-		System.out.println("Jdbc ile eklendi" + category.getName());
+	public void add(Category entity) {
+		categories.add(entity);
+		System.out.println("Jdbc ile eklendi" + entity.getName());
 
 	}
 
 	@Override
-	public boolean getCategory(Category category) {
-		for (Category _category : categories) {
-			if (_category.getName().equals(category.getName())) {
-				return false;
-			}
-		}
-		return true;
+	public List<Category> get() {
+		return categories;
 	}
 
 }

@@ -9,7 +9,6 @@ public class TeacherManager {
 	private Logger[] loggers;
 
 	public TeacherManager(TeacherDao teacherDao, Logger[] loggers) {
-		super();
 		this.teacherDao = teacherDao;
 		this.loggers = loggers;
 

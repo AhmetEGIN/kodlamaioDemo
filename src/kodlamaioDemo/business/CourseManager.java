@@ -6,15 +6,11 @@ import kodlamaioDemo.entities.Course;
 
 public class CourseManager {
 	private CourseDao courseDao;
-	Course[] courses;
 	Logger[] loggers;
 	public CourseManager(CourseDao courseDao, Logger[] loggers) {
 		this.courseDao = courseDao;
 		this.loggers = loggers;
-		courses = new Course[] {
-				new Course(1, 1, 1, "Java",200),
-				new Course(2, 2, 1, "Yazýlýma Giriþ",50)
-		};
+
 	}
 	
 	public void add(Course course) throws Exception {
@@ -28,7 +24,7 @@ public class CourseManager {
 	
 	// business-Codes
 	private boolean isCourseExist(Course course) throws Exception {
-		for(Course _course : courses) {
+		for(Course _course : courseDao.get()) {
 			if (_course.getName().equals(course.getName())) {
 				throw new Exception("Bu isimde bir kurs zaten mevcut");
 			}

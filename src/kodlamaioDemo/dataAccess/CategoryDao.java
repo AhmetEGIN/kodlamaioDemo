@@ -1,8 +1,8 @@
 package kodlamaioDemo.dataAccess;
 
+import kodlamaioDemo.core.dataAccess.EntityRepository;
 import kodlamaioDemo.entities.Category;
 
-public interface CategoryDao {
-	void add(Category category);
-	boolean getCategory(Category category);
+public interface CategoryDao extends EntityRepository<Category> {
+
 }

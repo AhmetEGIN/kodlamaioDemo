@@ -3,6 +3,7 @@ package kodlamaioDemo.dataAccess.hibernate;
 import java.util.ArrayList;
 import java.util.List;
 
+import kodlamaioDemo.core.dataAccess.hibernate.HibernateEntityRepositoryBase;
 import kodlamaioDemo.dataAccess.TeacherDao;
 import kodlamaioDemo.entities.Teacher;
 
@@ -20,6 +21,11 @@ public class HibernateTeacherDao implements TeacherDao {
 		teachers.add(teacher);
 		System.out.println("Hibernate ile eklendi" + teacher.getName());
 
+	}
+
+	@Override
+	public List<Teacher> get() {
+		return teachers;
 	}
 
 }
