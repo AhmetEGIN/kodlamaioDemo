@@ -1,6 +1,7 @@
 package kodlamaioDemo.business;
 
 import kodlamaioDemo.core.Logging.Logger;
+import kodlamaioDemo.core.Logging.Loggers;
 import kodlamaioDemo.dataAccess.TeacherDao;
 import kodlamaioDemo.entities.Teacher;
 
@@ -17,9 +18,7 @@ public class TeacherManager {
 	public void add(Teacher teacher) {
 		teacherDao.add(teacher);
 		
-		for(Logger logger : loggers) {
-			logger.log(teacher.getName());
-		}
+		Loggers.runLoggers(loggers, teacher.getName());
 	}
 	
 }

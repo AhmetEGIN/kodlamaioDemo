@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kodlamaioDemo.core.Logging.Logger;
+import kodlamaioDemo.core.Logging.Loggers;
 import kodlamaioDemo.dataAccess.CategoryDao;
 import kodlamaioDemo.entities.Category;
 
@@ -21,9 +22,7 @@ public class CategoryManager {
 	public void add(Category category) throws Exception {
 		if (isCategoryExist(category)) {
 			categoryDao.add(category);
-			for (Logger logger : loggers) {
-				logger.log(category.getName());
-			}
+			Loggers.runLoggers(loggers, category.getName());
 		}
 	}
 	
